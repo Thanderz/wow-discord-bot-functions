@@ -10,6 +10,9 @@
     "url": "git+https://github.com/tonytamps/wow-discord-bot-functions.git"
   },
   "dependencies": {
+    "lambda-handler-as-promised": "^1.2.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
   },
   "engines": {
     "node": ">=4.3.2"

@@ -4,26 +4,19 @@ provider:
   name: aws
   runtime: nodejs4.3
   region: ap-southeast-2
+  environment:
+      BNET_API_KEY: ${env:BNET_API_KEY}
 
 functions:
-  single:
-    handler: single.handler
+  commands:
+    handler: commands/help
     events:
       - http:
-          path: single
+          path: commands
           method: get
-      - http:
-          path: single
-          method: post
-  multiCreate:
-    handler: multiCreate.handler
+  gear:
+    handler: commands/gear
     events:
       - http:
-          path: multi/create
-          method: get
-  multiShow:
-    handler: multiShow.handler
-    events:
-      - http:
-          path: multi/show/{id}
+          path: commands/gear
           method: get
