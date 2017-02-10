@@ -6,7 +6,10 @@ module.exports.handler = lambdaHandler(event => {
 
   console.log(JSON.stringify(event));
 
-  const [region, realm, character] = JSON.parse(event.body);
+  const parsedBody = JSON.parse(event.body);
+  const character = parsedBody.character;
+  const region = parsedBody.region;
+  const realm = parsedBody.realm;
 
   return request.get(`https://${region}.api.battle.net/wow/character/${realm}/${encodeURI(character)}?fields=items&locale=en_US&apikey=${process.env.BNET_API_KEY}`)
     .then(res => {
