@@ -2,7 +2,7 @@ const lambdaHandler = require('lambda-handler-as-promised');
 const request = require('request-promise');
 const wh = 'http://www.wowhead.com/item=';
 
-module.exports.handler = lambdaHandler(event => {
+module.exports = lambdaHandler(event => {
 
   const [region, realm, character] = JSON.parse(event.body);
 
