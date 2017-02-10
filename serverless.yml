@@ -26,11 +26,4 @@ functions:
               querystrings:
                 character: true
                 realm: false
-                refion: false
-
-plugins:
-  - serverless-babel-plugin
-
-custom:
-  babelPresets:
-    - latest
+                region: false
