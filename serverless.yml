@@ -8,22 +8,18 @@ provider:
       BNET_API_KEY: ${env:BNET_API_KEY}
 
 functions:
-  commands:
-    handler: commands/help
-    events:
-      - http:
-          path: commands
-          method: get
   gear:
     handler: commands/gear.handler
     events:
       - http:
           path: commands/gear
           method: get
-          integration: lambda
-          request:
-            parameters:
-              querystrings:
-                character: true
-                realm: false
-                region: false
+  talents:
+    handler: commands/talents.handler
+    events:
+      - http:
+          path: commands/talents
+          method: get
+      - http:
+          path: commands/tals
+          method: get
