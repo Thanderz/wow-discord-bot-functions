@@ -15,10 +15,10 @@ functions:
           path: commands
           method: get
   gear:
-    handler: commands/gear
+    handler: commands/gear.handler
     events:
       - http:
-          path: commands/gear.handler
+          path: commands/gear
           method: get
           integration: lambda
           request:
