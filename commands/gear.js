@@ -4,6 +4,8 @@ const wh = 'http://www.wowhead.com/item=';
 
 module.exports = lambdaHandler(event => {
 
+  console.log(JSON.stringify(event))
+
   const [region, realm, character] = JSON.parse(event.body);
 
   return request.get(`https://${region}.api.battle.net/wow/character/${realm}/${encodeURI(character)}?fields=items&locale=en_US&apikey=${process.env.BNET_API_KEY}`)
