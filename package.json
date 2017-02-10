@@ -1,0 +1,22 @@
+{
+  "name": "wow-discord-bot-functions",
+  "version": "1.0.3",
+  "description": "A bare bones Serverless Framework project with examples for common use cases.",
+  "author": "Serverless.com",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tonytamps/wow-discord-bot-functions.git"
+  },
+  "dependencies": {
+  },
+  "main": "index.js",
+  "scripts": {
+    "deploy": "serverless deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "serverless": "^1.6.1"
+  }
+}
