@@ -18,5 +18,12 @@ functions:
     handler: commands/gear
     events:
       - http:
-          path: commands/gear
+          path: commands/gear.handler
           method: get
+          integration: lambda
+          request:
+            parameters:
+              querystrings:
+                character: true
+                realm: false
+                refion: false
