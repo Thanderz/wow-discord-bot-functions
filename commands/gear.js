@@ -1,6 +1,8 @@
 const lambdaHandler = require('lambda-handler-as-promised');
 const request = require('request-promise');
+
 const wh = 'http://www.wowhead.com/item=';
+const toTitleCase = str => str.charAt(0).toUpperCase() + str.substr(1);
 
 module.exports.handler = lambdaHandler(event => {
   const character = event.query.character;
