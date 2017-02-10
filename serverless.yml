@@ -20,7 +20,7 @@ functions:
               querystrings:
                 character: true
                 realm: false
-                refion: false
+                region: false
   talents:
     handler: commands/talents.handler
     events:
@@ -33,7 +33,7 @@ functions:
               querystrings:
                 character: true
                 realm: false
-                refion: false
+                region: false
       - http:
           path: commands/tals
           method: get
@@ -43,4 +43,4 @@ functions:
               querystrings:
                 character: true
                 realm: false
-                refion: false
+                region: false
