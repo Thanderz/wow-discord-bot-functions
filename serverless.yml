@@ -14,12 +14,33 @@ functions:
       - http:
           path: commands/gear
           method: get
+          integration: lambda
+          request:
+            parameters:
+              querystrings:
+                character: true
+                realm: false
+                refion: false
   talents:
     handler: commands/talents.handler
     events:
       - http:
           path: commands/talents
           method: get
+          integration: lambda
+          request:
+            parameters:
+              querystrings:
+                character: true
+                realm: false
+                refion: false
       - http:
           path: commands/tals
           method: get
+          integration: lambda
+          request:
+            parameters:
+              querystrings:
+                character: true
+                realm: false
+                refion: false
