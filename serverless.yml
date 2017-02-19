@@ -21,6 +21,19 @@ functions:
                 character: true
                 realm: false
                 region: false
+  prog:
+    handler: commands/prog.handler
+    events:
+      - http:
+          path: commands/prog
+          method: get
+          integration: lambda
+          request:
+            parameters:
+              querystrings:
+                character: true
+                realm: false
+                region: false
   talents:
     handler: commands/talents.handler
     events:
