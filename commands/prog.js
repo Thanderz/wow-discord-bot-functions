@@ -17,9 +17,9 @@ Armory: <http://${region}.battle.net/wow/en/character/${realm}/${encodeURI(chara
 
       const info = raids.map(r => ({
         name: r.name,
-        normal: `${r.bosses.filter(b => b.normalKills > 0).length}/${r.bosses.length}N`,
-        heroic: `${r.bosses.filter(b => b.heroicKills > 0).length}/${r.bosses.length}H`,
-        mythic: `${r.bosses.filter(b => b.mythicKills > 0).length}/${r.bosses.length}M`,
+        normal: `${r.bosses.filter(b => b.normalKills > 0).length}/${r.bosses.length} Normal`,
+        heroic: `${r.bosses.filter(b => b.heroicKills > 0).length}/${r.bosses.length} Heroic`,
+        mythic: `${r.bosses.filter(b => b.mythicKills > 0).length}/${r.bosses.length} Mythic`,
       }));
 
       const options = {
