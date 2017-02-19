@@ -34,6 +34,14 @@ functions:
                 character: true
                 realm: false
                 region: false
+  loot:
+    handler: commands/loot.handler
+    events:
+      - http:
+          path: commands/loot
+          method: get
+          integration: lambda
+
   talents:
     handler: commands/talents.handler
     events:
