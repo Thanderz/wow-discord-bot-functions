@@ -29,11 +29,11 @@ module.exports.handler = lambdaHandler(() => {
           inline: true
         }, {
           name: 'End Chest',
-          value: loot.map(l => l.end).join('\n'),
+          value: Object.keys(loot).map(k => loot[k].end).join('\n'),
           inline: true
         }, {
           name: 'Weekly Chest',
-          value: loot.map(l => l.weekly).join('\n'),
+          value: Object.keys(loot).map(k => loot[k].weekly).join('\n'),
           inline: true
         }]
     }
