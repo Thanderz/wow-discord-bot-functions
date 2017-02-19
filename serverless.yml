@@ -41,6 +41,13 @@ functions:
           path: commands/loot
           method: get
           integration: lambda
+  help:
+    handler: commands/help.handler
+    events:
+      - http:
+          path: commands/help
+          method: get
+          integration: lambda
 
   talents:
     handler: commands/talents.handler
