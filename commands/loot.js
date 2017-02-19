@@ -1,7 +1,7 @@
 const lambdaHandler = require('lambda-handler-as-promised');
 
 const loot = {
-  '-': { end: 840, weekly: 'n/a' },
+  '0': { end: 840, weekly: 'N/A' },
   '2': { end: 845, weekly: 850 },
   '3': { end: 845, weekly: 855 },
   '4': { end: 850, weekly: 860 },
