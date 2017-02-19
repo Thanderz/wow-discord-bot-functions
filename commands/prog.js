@@ -11,11 +11,9 @@ module.exports.handler = lambdaHandler(event => {
   return request.get(`https://${region}.api.battle.net/wow/character/${realm}/${encodeURI(character)}?fields=progression&locale=en_US&apikey=${process.env.BNET_API_KEY}`)
     .then(res => {
       const data = JSON.parse(res);
-      const options = {};
-      let response = `${toTitleCase(character)} - ${toTitleCase(realm)} - ${region.toUpperCase()}
-Armory: <http://${region}.battle.net/wow/en/character/${realm}/${encodeURI(character)}/advanced>`;
-
       const raids = data.progression.raids.filter(r => r.id > 8000);
+      const  response = `${toTitleCase(character)} - ${toTitleCase(realm)} - ${region.toUpperCase()}
+Armory: <http://${region}.battle.net/wow/en/character/${realm}/${encodeURI(character)}/advanced>`;
 
       const info = raids.map(r => ({
         name: r.name,
@@ -24,11 +22,17 @@ Armory: <http://${region}.battle.net/wow/en/character/${realm}/${encodeURI(chara
         mythic: `${r.bosses.filter(b => b.mythicKills > 0).length}/${r.bosses.length}M`,
       }));
 
-      response += `
-${info.reduce((s, r) => s += r.name + ': ' + r.normal + ' ' + r.heroic + ' ' + r.mythic + '\n', '')}
-`;
+      const options = {
+        embed: {
+          title: 'Progression',
+          fields: info.map(r => ({
+            name: r.name,
+            value: [r.normal, r.heroic, r.mythic].join('\n'),
+            inline: true
+          }))
+        }
+      };
+
       return [response, options];
     })
 });
-
-
