@@ -1,21 +1,16 @@
 const lambdaHandler = require('lambda-handler-as-promised');
 
 const loot = {
-  '0': { end: 840, weekly: 'N/A' },
-  '2': { end: 845, weekly: 850 },
-  '3': { end: 845, weekly: 855 },
-  '4': { end: 850, weekly: 860 },
-  '5': { end: 850, weekly: 865 },
-  '6': { end: 855, weekly: 865 },
-  '7': { end: 855, weekly: 870 },
-  '8': { end: 860, weekly: 870 },
-  '9': { end: 860, weekly: 875 },
-  '10': { end: 865, weekly: 880 },
-  '11': { end: 870, weekly: 880 },
-  '12': { end: 870, weekly: 885 },
-  '13': { end: 875, weekly: 890 },
-  '14': { end: 880, weekly: 895 },
-  '15': { end: 885, weekly: 900 },
+  '0': { end: 865, weekly: 'N/A' },
+  '2': { end: 870, weekly: 875 },
+  '3': { end: 870, weekly: 880 },
+  '4': { end: 875, weekly: 885 },
+  '5': { end: 875, weekly: 890 },
+  '6': { end: 880, weekly: 890 },
+  '7': { end: 880, weekly: 895 },
+  '8': { end: 885, weekly: 895 },
+  '9': { end: 885, weekly: 900 },
+  '10+': { end: 890, weekly: 905 },
 };
 
 module.exports.handler = lambdaHandler(() => {
