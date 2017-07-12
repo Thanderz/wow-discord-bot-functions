@@ -1,7 +1,7 @@
 const lambdaHandler = require('lambda-handler-as-promised');
 const request = require('request-promise');
 
-module.exports.handler = lambdaHandler(() => {
+module.exports.handler = lambdaHandler(event => {
   const region = event.query.region;
 
   return request.get(`https://raider.io/api/v1/mythic-plus/affixes?region=${region}`)
