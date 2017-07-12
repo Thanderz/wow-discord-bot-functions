@@ -48,6 +48,34 @@ functions:
           path: commands/help
           method: get
           integration: lambda
+      - http:
+          path: commands/commands
+          method: get
+          integration: lambda
+
+  affixes:
+    handler: commands/affixes.handler
+    events:
+      - http:
+          path: commands/affixes
+          method: get
+          integration: lambda
+          request:
+            parameters:
+              querystrings:
+                character: false
+                realm: false
+                region: false
+      - http:
+          path: commands/affix
+          method: get
+          integration: lambda
+          request:
+            parameters:
+              querystrings:
+                character: false
+                realm: false
+                region: false
 
   talents:
     handler: commands/talents.handler
