@@ -3,11 +3,14 @@ const lambdaHandler = require('lambda-handler-as-promised');
 module.exports.handler = lambdaHandler(() => {
   const options = {};
   const message = `
-**?help** 
+**?help|commands** 
     Shows this message
 
 **?loot**
-    Lists the rewards for doing Mythics
+    Lists the rewards for doing mythic dungeons
+
+**?affixes|affix**
+    Lists the weekly mythic dungeon affixes
     
 **?gear <character> [realm=saurfang] [region=us]**
     Lists the gear for the provided character name, optional realm and region
